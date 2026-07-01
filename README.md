@@ -49,3 +49,47 @@ Airlines lose loyal customers when dissatisfaction goes undetected until it's to
 - `Departure Delay` dropped due to high multicollinearity with `Arrival Delay` (correlation ≈ 0.99) — kept Arrival Delay since it's closer to the passenger's actual experience
 
 ## 🛠 Tech Stack
+
+`Python` `Pandas` `NumPy` `Scikit-learn` `Matplotlib` `Seaborn` `Jupyter`
+
+## 🔬 Methodology
+
+1. **Data Cleaning** — missing value imputation, dtype correction, multicollinearity removal
+2. **EDA** — target distribution, feature distributions, outlier detection (IQR), correlation analysis
+3. **Feature Engineering** — Label Encoding (binary features), Ordinal Encoding (Class: Economy < Economy Plus < Business)
+4. **Preprocessing** — stratified 80-20 train-test split, StandardScaler (fit on train only — no data leakage)
+5. **Modeling** — benchmarked 4 algorithms (Logistic Regression → Decision Tree → Random Forest → Gradient Boosting), increasing in complexity
+6. **Tuning** — RandomizedSearchCV (20 iterations, 3-fold CV) on a 20% sample for efficiency, validated on full test set
+7. **Validation** — 5-fold stratified cross-validation to confirm no overfitting
+8. **Business Translation** — converted feature importance into actionable airline recommendations
+
+## 💡 Business Recommendations
+
+1. **Invest in digital boarding** — highest-impact, highest-ROI improvement area
+2. **Improve in-flight Wifi reliability** — second highest driver of satisfaction
+3. **Upgrade Economy / Economy Plus experience** — these segments are disproportionately dissatisfied
+4. **Build a first-time flyer loyalty program** — first-time passengers show significantly lower satisfaction and higher churn risk than returning customers
+
+## 📂 Project Structure
+
+```
+airline-passenger-satisfaction-ml/
+├── Airline_Satisfaction_Prediction.ipynb   # full analysis notebook
+├── Airline_Satisfaction_Presentation.pptx  # 5-slide project summary
+├── requirements.txt
+└── README.md
+```
+
+## 🚀 How to Run
+
+```bash
+git clone https://github.com/Atharva-k20/airline-passenger-satisfaction-ml.git
+cd airline-passenger-satisfaction-ml
+pip install -r requirements.txt
+jupyter notebook Airline_Satisfaction_Prediction.ipynb
+```
+
+## 👤 Author
+
+**Atharva Khot** — Data Scientist | M.Sc. AI & ML
+[LinkedIn](https://www.linkedin.com/in/atharva-khot-37b53228a/) · [GitHub](https://github.com/Atharva-k20) · atharvakhot58@gmail.com
